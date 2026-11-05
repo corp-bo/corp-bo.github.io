@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Invitación de boda</title>
+  <meta name="description" content="Invitación de boda">
+  <meta name="theme-color" content="#14305c">
+  <!-- Vista previa al compartir por WhatsApp (los bots no ejecutan JS: edita estas 3 líneas a mano) -->
+  <meta property="og:title" content="Ramiro & Magui">
+  <meta property="og:description" content="Tenemos el honor de invitarte a nuestra boda">
+  <meta property="og:image" content="assets/img/portada.jpg">
+
+  <link rel="stylesheet" href="config/fonts.css">
+  <link rel="stylesheet" href="config/colors.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bloqueado">
+
+  <!-- Íconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-corazon" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 5.8-8 11-8 11z" fill="currentColor"/></symbol>
+    <symbol id="i-lazo" viewBox="0 0 44 30">
+      <path d="M22 15C16 3 4 3 3 9c-1 8 11 11 19 6zM22 15c6-12 18-12 19-6 1 8-11 11-19 6z" fill="currentColor"/>
+      <rect x="18.5" y="10.5" width="7" height="9" rx="2.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-ornamento" viewBox="0 0 160 26">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M74 13C66 13 63 5 54 5 45 5 43 12 34 12 24 12 18 8 6 8"/>
+        <path d="M86 13c8 0 11-8 20-8 9 0 11 7 20 7 10 0 16-4 28-4"/>
+        <path d="M54 5c-2 7 2 11 9 10M106 5c2 7-2 11-9 10"/>
+      </g>
+      <path d="M80 6l5 7-5 7-5-7z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-varita" viewBox="0 0 24 24"><path d="M4 20 16 8M15 3l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1zM19.5 12l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-navegar" viewBox="0 0 24 24"><path d="M20 4 4 11l7 2 2 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ========== PORTADA ========== -->
+  <div id="portada" class="portada">
+    <div class="portada__tarjeta">
+      <div class="portada__icono"><svg aria-hidden="true"><use href="#i-corazon"/></svg></div>
+      <h1 class="portada__nombres"><span id="portada-novio"></span><span class="amp">&amp;</span><span id="portada-novia"></span></h1>
+      <div class="divisor"><i></i><svg aria-hidden="true"><use href="#i-corazon"/></svg><i></i></div>
+      <p id="portada-fecha" class="portada__fecha"></p>
+      <p id="portada-mensaje" class="portada__mensaje"></p>
+      <button id="btn-abrir" class="btn" type="button"></button>
+    </div>
+  </div>
+
+  <main id="invitacion">
+
+    <!-- ========== NOMBRES + PADRES + CEREMONIA ========== -->
+    <section class="banda">
+      <article class="marco hero reveal">
+        <!--<svg class="lazo lazo--izq" aria-hidden="true"><use href="#i-lazo"/></svg>-->
+        <!--<svg class="lazo lazo--der" aria-hidden="true"><use href="#i-lazo"/></svg>-->
+        <!--<svg class="ornamento" aria-hidden="true"><use href="#i-ornamento"/></svg>-->
+        <p id="hero-etiqueta" class="etiqueta"></p>
+        <h2 class="hero__nombres"><span id="hero-novio"></span><span class="amp">&amp;</span><span id="hero-novia"></span></h2>
+      </article>
+
+      <article class="marco padres reveal">
+        <div class="padres__cols">
+          <div><p id="padres-enc-1" class="suave"></p><p id="padres-novio-1" class="padre"></p><p id="padres-novio-2" class="padre"></p></div>
+          <div><p id="padres-enc-2" class="suave"></p><p id="padres-novia-1" class="padre"></p><p id="padres-novia-2" class="padre"></p></div>
+        </div>
+        <p id="padres-frase" class="frase"></p>
+        <p id="padres-nombre-novio" class="nombre-largo"></p>
+        <p class="amp amp--grande">&amp;</p>
+        <p id="padres-nombre-novia" class="nombre-largo"></p>
+        <div class="evento">
+          <p id="ceremonia-titulo" class="evento__linea"></p>
+          <p id="ceremonia-lugar" class="evento__linea"></p>
+          <p class="evento__linea">Hora: <span id="ceremonia-hora"></span><span class="espacio"></span><span id="ceremonia-dia"></span></p>
+          <div class="fecha-bloque"><b class="dia" data-fecha-dia></b><i></i><span><span data-fecha-mes></span><br><span data-fecha-anio></span></span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ========== GALERÍA ========== -->
+    <section class="seccion seccion--galeria">
+      <h2 id="galeria-titulo" class="titulo reveal"></h2>
+      <div id="carrusel" class="carrusel" role="group" aria-roledescription="carrusel"></div>
+      <p id="carrusel-contador" class="contador"></p>
+    </section>
+
+    <!-- ========== FIESTA ========== -->
+    <section class="banda">
+      <article class="marco fiesta reveal">
+        <h2 id="fiesta-titulo" class="titulo"></h2>
+        <p id="fiesta-texto" class="titulo titulo--md"></p>
+        <p class="evento__linea">Hora: <span id="fiesta-hora"></span><span class="espacio"></span><span id="fiesta-dia"></span></p>
+        <div class="fecha-bloque"><b class="dia" data-fecha-dia></b><i></i><span><span data-fecha-mes></span><br><span data-fecha-anio></span></span></div>
+        <p id="cuenta-titulo" class="cuenta__titulo"></p>
+        <p id="cuenta" class="cuenta"></p>
+        <div id="calendario" class="cal"></div>
+        <a id="btn-ics" class="enlace" href="#" role="button"></a>
+        <a id="btn-rsvp" class="btn btn--sm" href="#" target="_blank" rel="noopener"></a>
+      </article>
+    </section>
+
+    <!-- ========== LUGAR ========== -->
+    <section class="seccion reveal">
+      <h2 id="lugar-titulo" class="titulo titulo--md"></h2>
+      <p id="lugar-nombre" class="suave"></p>
+      <div class="mapa">
+        <iframe id="mapa" title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a id="mapa-abrir" class="mapa__abrir" target="_blank" rel="noopener"></a>
+      </div>
+      <a id="mapa-llegar" class="llegar" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-navegar"/></svg><span></span></a>
+    </section>
+
+    <!-- ========== DRESS CODE ========== -->
+    <section class="seccion reveal">
+      <h2 id="vest-titulo" class="titulo titulo--md"></h2>
+      <p id="vest-texto" class="suave suave--txt"></p>
+      <p id="vest-codigo" class="suave suave--txt upper"></p>
+      <div id="vest-imagenes" class="vest__imgs"></div>
+      <div id="vest-colores" class="vest__colores"></div>
+    </section>
+
+    <!-- ========== LIBRO DE VISITAS ========== -->
+    <section class="seccion reveal">
+      <h2 id="libro-titulo" class="titulo titulo--md"></h2>
+      <div class="libro">
+        <input id="libro-nombre" type="text" maxlength="60" autocomplete="name">
+        <textarea id="libro-deseo" rows="4" maxlength="400"></textarea>
+        <div class="libro__fila">
+          <button id="libro-magia" class="btn-magia" type="button" aria-label="Sugerir un deseo"><svg aria-hidden="true"><use href="#i-varita"/></svg></button>
+          <button id="libro-enviar" class="btn btn--sm btn--serif" type="button"></button>
+        </div>
+        <div id="libro-lista" class="libro__lista"></div>
+      </div>
+    </section>
+
+    <!-- ========== CIERRE ========== -->
+    <section class="banda banda--cierre">
+      <article class="marco cierre reveal">
+        <p id="cierre-texto"></p>
+        <p id="cierre-versiculo"></p>
+        <p id="cierre-cita"></p>
+        <p id="cierre-credito" class="credito"></p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Foto ampliada -->
+  <!--<div id="zoom" class="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="zoom__cerrar" type="button" aria-label="Cerrar">×</button>
+    <img id="zoom-img" alt="">
+  </div>-->
+
+    <!-- Visor de fotos -->
+  <div id="zoom" class="zoom" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="zoom__cerrar" type="button" aria-label="Cerrar">×</button>
+    <button class="zoom__nav zoom__nav--prev" type="button" aria-label="Foto anterior">‹</button>
+    <button class="zoom__nav zoom__nav--next" type="button" aria-label="Foto siguiente">›</button>
+    <div id="zoom-escena" class="zoom__escena"><img id="zoom-img" alt="" draggable="false"></div>
+    <p id="zoom-contador" class="zoom__contador"></p>
+  </div>
+
+  <button id="btn-musica" class="musica" type="button" aria-label="Activar o silenciar la música">
+    <span></span><span></span><span></span><span></span>
+  </button>
+  <audio id="audio" loop preload="auto"></audio>
+
+  <script src="config/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

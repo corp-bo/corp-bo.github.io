@@ -1,0 +1,22 @@
+/* ==========================================================
+   FUENTES Y TAMAÑOS BASE
+   Las fuentes se cargan de Google Fonts. Para cambiarlas:
+   1) cambia la URL del @import  2) cambia el nombre en las variables.
+   ========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif:wght@400;500;600;700&family=Playfair+Display:wght@400;500&family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --fuente-nombres: "Playfair Display", "Cormorant Garamond", Georgia, serif;  /* RAMIRO · MAGUI · fecha grande */
+  --fuente-elegante: "Cormorant Garamond", "Playfair Display", Georgia, serif; /* el símbolo & y "Cuenta regresiva" */
+  --fuente-texto: "Noto Serif", Georgia, serif;                                /* títulos, padres y párrafos */
+  --fuente-ui: "Roboto", Arial, sans-serif;                                    /* botones, formularios y cierre */
+
+  --tam-base: 16px;
+  --tam-nombres-portada: clamp(2.1rem, 9vw, 2.6rem);
+  --tam-nombres-hero: clamp(2rem, 9vw, 2.8rem);
+  --tam-nombres-largos: clamp(1rem, 4.6vw, 1.3rem);
+  --tam-fecha-grande: clamp(2.6rem, 12vw, 3.3rem);
+  --tam-titulo: clamp(1.05rem, 4.8vw, 1.25rem);
+  --tam-texto: 0.86rem;
+  --tam-pequeno: 0.72rem;
+}

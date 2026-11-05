@@ -1,0 +1,33 @@
+/* ==========================================================
+   PALETA — edita solo estas variables (todo el diseño las usa)
+   ========================================================== */
+:root {
+  /* Fondos */
+  --color-fondo: #ecebe1;            /* crema: fondo general de la página */
+  --color-tarjeta: #efede3;          /* crema de tarjetas y marcos */
+
+  /* Azul principal: títulos, bordes, botones, calendario */
+  --color-primario: #14305c;
+  --color-primario-oscuro: #0e2547;
+  --color-calendario: #14365f;       /* bloque azul del calendario */
+
+  /* Textos */
+  --color-texto: #2a3c5c;            /* párrafos */
+  --color-texto-suave: #6f7f9a;      /* textos azul-grisáceos (fecha, cuenta regresiva) */
+  --color-gris: #7b7f89;             /* textos grises (Sr. y Sra., contador, avisos) */
+  --color-sobre-primario: #ffffff;   /* texto/íconos sobre fondos azules */
+
+  /* Líneas y formularios */
+  --color-linea: #14305c;            /* bordes de los marcos */
+  --color-input-borde: #7d8aa0;
+  --color-input-fondo: transparent;
+  --color-boton-mini: #dcdad0;       /* botoncito de la varita mágica */
+
+  /* Mapa */
+  --color-chip-fondo: #ffffff;
+  --color-enlace-mapa: #1a73e8;
+
+  /* Efectos */
+  --color-sombra: rgba(20, 48, 92, 0.28);
+  --color-fondo-zoom: rgba(8, 20, 40, 0.92);   /* fondo oscuro al ampliar una foto */
+}
