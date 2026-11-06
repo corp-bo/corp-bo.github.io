@@ -117,12 +117,16 @@ button { font: inherit; cursor: pointer; }
 .padres__cols > div { padding: 0 .4rem; }
 .padres__cols > div + div { border-left: 1px solid var(--color-input-borde); }*/
 
-.padres__cols { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+/*.padres__cols { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
 .padres__cols > div { padding: 0 .4rem; }
-.padres__cols > div + div { border-top: 1px solid var(--color-input-borde); padding-top: 1.2rem; }
+.padres__cols > div + div { border-top: 1px solid var(--color-input-borde); padding-top: 1.2rem; }*/
+
+.padres__cols { display: grid; grid-template-columns: 1fr 1fr; }
+.padres__cols > div { padding: 0 .6rem; }
+.padres__cols > div + div { border-left: 1px solid var(--color-input-borde); }
 
 .padres .suave { font-size: .8rem; margin-bottom: .35rem; }
-.padre { font-size: .7rem; font-weight: 700; line-height: 1.3; color: var(--color-primario); }
+.padre { font-size: .60rem; font-weight: 700; line-height: 1.3; color: var(--color-primario); }
 .padre + .padre { margin-top: .3rem; }
 .frase { margin: 1.5rem 0 1.4rem; font-size: .7rem; font-weight: 500; line-height: 1.5; text-transform: uppercase; letter-spacing: .02em; color: var(--color-primario); }
 .nombre-largo { font-family: var(--fuente-nombres); font-size: var(--tam-nombres-largos); line-height: 1.3; text-transform: uppercase; color: var(--color-primario); }
@@ -276,8 +280,8 @@ button { font: inherit; cursor: pointer; }
    RESPONSIVE (todo centrado; en escritorio se mantiene la columna central)
    ========================================================== */
 @media (min-width: 700px) {
-  .padres__cols { grid-template-columns: 1fr 1fr; gap: 0; }
-  .padres__cols > div + div { border-top: 0; padding-top: 0; border-left: 1px solid var(--color-input-borde); }
+  /*.padres__cols { grid-template-columns: 1fr 1fr; gap: 0; }
+  .padres__cols > div + div { border-top: 0; padding-top: 0; border-left: 1px solid var(--color-input-borde); }*/
   :root { --ancho-marco: 480px; }
   .banda { padding: 4.2rem 0; }
   .padre { font-size: .76rem; } .frase { font-size: .76rem; } .evento__linea { font-size: .72rem; }
