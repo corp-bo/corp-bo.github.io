@@ -67,7 +67,7 @@ window.INVITACION = {
   /* RSVP por WhatsApp: número con código de país, sin + ni espacios */
   rsvp: {
     whatsapp: "59165184362",
-    mensaje: "¡Hola! Confirmo mi asistencia a la boda de Ramiro & Magui el 5 de diciembre."
+    mensaje: "¡Holaaa! Confirmo mi asistencia a la boda de Ramiro & Magui el 5 de diciembre. \nAtte: "
   },
 
   /* ---------- Lugar de la recepción (mapa de Google) ---------- */
